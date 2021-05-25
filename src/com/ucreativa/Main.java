@@ -12,6 +12,11 @@ public class Main {
 
         Mario father = new Mario(saludo);
 
+        father.setCumple();
+        int age = father.getCumple();
+
+        System.out.println("Feliz Cumple " + age);
+
 
     }
 }
