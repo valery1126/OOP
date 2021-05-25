@@ -1,13 +1,16 @@
 package com.ucreativa;
 import com.ucreativa.poc.Valery;
+import com.ucreativa.poc.Mario;
 
 public class Main {
 
     public static void main(String[] args) {
-	    System.out.print("Hola Clase");
-        System.out.println("\n");
+	    System.out.println("Hola Clase");
         Valery yo = new Valery();
 
+        String saludo = "Buenas Noches";
+
+        Mario father = new Mario(saludo);
 
 
     }
