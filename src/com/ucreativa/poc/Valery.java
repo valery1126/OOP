@@ -1,8 +1,10 @@
 package com.ucreativa.poc;
 
-public class Valery {
-    public Valery(){
+public class Valery extends Mario{
 
-        System.out.println("Hola Clase");
+    public Valery(String saludo) {
+        super(saludo);
     }
+
+
 }

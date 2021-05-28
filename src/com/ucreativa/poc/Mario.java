@@ -7,6 +7,7 @@ public class Mario {
 
     public Mario(String saludo){
         this.age = 70;
+        this.hobby = "Gardening";
         System.out.println(saludo);
     }
 
@@ -18,7 +19,9 @@ public class Mario {
         return this.age;
     }
 
-
+    public String getHobby() {
+        return hobby;
+    }
 
 
 }

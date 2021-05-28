@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 	    System.out.println("Hola Clase");
-        Valery yo = new Valery();
+        Valery yo = new Valery("Hi");
 
         String saludo = "Buenas Noches";
 
@@ -14,8 +14,10 @@ public class Main {
 
         father.setCumple();
         int age = father.getCumple();
+        String hobby = father.getHobby();
 
         System.out.println("Feliz Cumple " + age);
+        System.out.println("I love " + hobby);
 
 
     }
