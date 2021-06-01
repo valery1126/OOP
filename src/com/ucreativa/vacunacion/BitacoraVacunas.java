@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class BitacoraVacunas {
 
-    private Persona persona;
+    private Persona persona; //Tipo Persona
     private String marca;
     private Date fecha;
 
