@@ -4,6 +4,7 @@ import com.ucreativa.vacunacion.entities.Amigo;
 import com.ucreativa.vacunacion.entities.BitacoraVacunas;
 import com.ucreativa.vacunacion.entities.Familiar;
 import com.ucreativa.vacunacion.entities.Persona;
+import com.ucreativa.vacunacion.repositories.InMemoryRepository;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -12,31 +13,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /*Date fecha = new Date();
-        ArrayList<BitacoraVacunas> listBitacora = new ArrayList<>();
-
-        Familiar fam1 = new Familiar("Maria", "205890255",50,false,"Madre");
-        BitacoraVacunas bitacora1 = new BitacoraVacunas(fam1,"Astra", fecha);
-        listBitacora.add(bitacora1);
-
-        Familiar fam2 = new Familiar("Mario", "205890258",50,false,"Padre");
-        BitacoraVacunas bitacora2 = new BitacoraVacunas(fam2,"Astra", fecha);
-        listBitacora.add(bitacora2);
-
-        Amigo ami1 = new Amigo("Mauricio", "205890258",50,false,"Amigo", "Mauricio Ramirez");
-        BitacoraVacunas bitacora3 = new BitacoraVacunas(ami1,"Astra", fecha);
-        listBitacora.add(bitacora3);
-
-
-        for (BitacoraVacunas item : listBitacora){
-            System.out.println(item.getPersona().getNombre() + "Vacunado la fecha: " + item.getFecha());
-        }*/
-
-
 
         Scanner in = new Scanner(System.in);
 
-        List<BitacoraVacunas> db = new ArrayList<>();
+        InMemoryRepository repo = new InMemoryRepository();
         String nombre, cedula, edad, riesgo, isAmigo, relacion, facebook, parentesco, marca;
         Persona persona;
 
@@ -76,13 +56,13 @@ public class Main {
             System.out.println("Vacuna (Marca):");
             marca = in.nextLine();
 
-            db.add(new BitacoraVacunas(persona, marca, new Date()));
+            repo.save(persona, marca, new Date());
 
             System.out.println("Desea imprimir la lista (S/N)");
             String print = in.nextLine();
             if (print.equals("S")) {
-                for (BitacoraVacunas item : db) {
-                    System.out.println(item.getPersona().getNombre() + " fue vacunada el " + item.getFecha());
+                for (String item : repo.get()) {
+                    System.out.println(item);
                 }
             }
 
