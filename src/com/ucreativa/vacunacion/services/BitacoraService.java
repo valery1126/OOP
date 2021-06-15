@@ -20,7 +20,7 @@ public class BitacoraService {
         this.repository = repository;
     }
     public void save(String nombre, String cedula, String txtEdad,
-                     String txtRiesgo, String txtIsAmigo, String relacion,
+                     Boolean txtRiesgo, Boolean txtIsAmigo, String relacion,
                      String facebook, String parentesco, String marca) throws IOException {
 
         int edad = Integer.parseInt(txtEdad);
