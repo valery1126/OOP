@@ -9,6 +9,11 @@ public class Familiar extends Persona {
         this.parentesco = parentesco;
     }
 
+    public Familiar(String nombre, int edad, boolean riesgo, String parentesco) {
+        super(nombre, "N/A", edad, riesgo);
+        this.parentesco = parentesco;
+    }
+
     public void setParentesco(String parentesco) {
         this.parentesco = parentesco;
     }

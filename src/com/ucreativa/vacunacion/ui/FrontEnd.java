@@ -110,23 +110,30 @@ public class FrontEnd extends JFrame {
                             txtFacebook.getText(),
                             txtParentezco.getText(),
                             txtMarca.getText());
-                } catch (IOException ioException) {
+
+                    txtNombre.setText("");
+                    txtCedula.setText("");
+                    txtEdad.setText("");
+                    txtRiesgo.setText("");
+                    txtIsAmigo.setText("");
+                    txtRelacion.setText("");
+                    txtFacebook.setText("");
+                    txtParentezco.setText("");
+                    txtMarca.setText("");
+
+                    String repote = String.join("\n",service.get());
+                    JOptionPane.showMessageDialog((JButton)e.getSource(), repote);
+
+
+
+
+
+                } catch (IOException | ErrorEnEdadException ioException) {
                     ioException.printStackTrace();
                 }
 
 
-                txtNombre.setText("");
-                txtCedula.setText("");
-                txtEdad.setText("");
-                txtRiesgo.setText("");
-                txtIsAmigo.setText("");
-                txtRelacion.setText("");
-                txtFacebook.setText("");
-                txtParentezco.setText("");
-                txtMarca.setText("");
 
-                 String repote = String.join("\n",service.get());
-                 JOptionPane.showMessageDialog((JButton)e.getSource(), repote);
 
 
 
